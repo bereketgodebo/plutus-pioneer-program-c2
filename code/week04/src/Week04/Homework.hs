@@ -31,7 +31,7 @@ payContract = do
     pp <- endpoint @"pay"
     let tx = mustPayToPubKey (ppRecipient pp) $ lovelaceValueOf $ ppLovelace pp
     Contract.handleError (\err -> Contract.logError $ "caught error " ++ unpack err) $ void $ submitTx tx
-    --payContract
+    payContract --commented out this part
  
 
 -- A trace that invokes the pay endpoint of payContract on Wallet 1 twice, each time with Wallet 2 as
